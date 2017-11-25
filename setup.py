@@ -1,5 +1,6 @@
+"""
 Flask-SES
--------------
+=========
 
 This tiny library will help you to send email using boto3 through AWS SES.
 """

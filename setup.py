@@ -16,7 +16,7 @@ setup(
     author_email='michael.tcoelho@gmail.com',
     description='Sending email using AWS SES',
     long_description=__doc__,
-    py_modules=['flask_ses'],
+    packages=['flask_ses'],
     zip_safe=False,
     include_package_data=True,
     platforms='any',

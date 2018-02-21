@@ -8,7 +8,7 @@ from setuptools import setup
 
 
 setup(
-    name='Flask-SES',
+    name='ses-mail',
     version='1.0',
     url='https://github.com/michaeltcoelho/flask-ses',
     license='MIT',
@@ -26,11 +26,11 @@ setup(
     classifiers=[
         'Environment :: Web Environment',
         'Intended Audience :: Developers',
-        'License :: OSI Approved :: BSD License',
+        'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',
-        'Programming Language :: Python3.6.1',
+        'Programming Language :: Python',
+        'Programming Language :: Python :: 3',
         'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
         'Topic :: Software Development :: Libraries :: Python Modules'
     ]
 )
-

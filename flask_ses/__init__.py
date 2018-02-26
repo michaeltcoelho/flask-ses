@@ -29,28 +29,32 @@ class SESMailer:
             )
         return self._ses_mailer
 
-    def send_email(self, recipients, sender=None, subject='', text='', html=''):
+    def send_email(self, to_addresses, sender=None, subject='',
+                   content='', is_html=False):
         """Send e-mail.
 
-        :param recipients: Recipients e-mails list.
+        :param to_addresses: Recipients e-mails list.
         :param sender: Sender e-mail.
         :param subject: E-mail subject.
-        :param text: E-mail body as a text.
-        :param html: E-mail body html.
+        :param content: E-mail body.
+        :param is_html: E-mail body contains html?
         """
         if sender is None:
             sender = self.ses_sender
 
+        if is_html:
+            body_type = 'Html'
+        else:
+            body_type = 'Text'
+
         email = self.connection.send_email(
             Source=sender,
-            Destination={'ToAddresses': recipients},
+            Destination={'ToAddresses': to_addresses},
             Message={
-                'Subject': {'Data': subject},
+                'Subject': {'Data': subject, 'Charset': 'UTF-8'},
                 'Body': {
-                    'Text': {'Data': text},
-                    'Html': {'Data': html},
-                }
+                    body_type: {'Data': content, 'Charset': 'UTF-8'}
+                },
             }
         )
         return email
-

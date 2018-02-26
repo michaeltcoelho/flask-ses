@@ -9,7 +9,7 @@ from setuptools import setup
 
 setup(
     name='ses-mail',
-    version='1.0',
+    version='1.0.3',
     url='https://github.com/michaeltcoelho/flask-ses',
     license='MIT',
     author='Michael Coelho',
